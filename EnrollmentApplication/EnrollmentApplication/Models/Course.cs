@@ -28,8 +28,6 @@ namespace EnrollmentApplication.Models
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
-
-            //Validation 1: Credits have to be between 1-2
             if(Credits < 1 || Credits > 4)
             {
                 yield return (new ValidationResult("Credits must be between 1 and 4"));
@@ -39,8 +37,6 @@ namespace EnrollmentApplication.Models
             {
                 yield return (new ValidationResult("Your description is too verbose"));
             }
-
-            throw new NotImplementedException();
         }
     }
 }
