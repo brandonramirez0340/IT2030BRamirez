@@ -20,5 +20,8 @@ namespace EnrollmentApplication.Models
         [Required(ErrorMessage = "{0} is required")]
         [StringLength(50, ErrorMessage = "{0} can not exceed 50 characters")]
         public virtual string FirstName { get; set; }
+
+        [MinimumAge(20)]
+        public virtual int Age { get; set; }
     }
 }
