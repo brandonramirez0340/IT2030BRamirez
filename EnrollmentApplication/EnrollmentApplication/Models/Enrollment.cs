@@ -39,5 +39,9 @@ namespace EnrollmentApplication.Models
         [Required(ErrorMessage = "{0} is required")]
         [Range(2018, Double.PositiveInfinity, ErrorMessage = "{0} must be 2018 or later")]
         public virtual int EnrollmentYear { get; set; }
+
+        //[InvalidChars("*^")]
+        [InvalidChars("*^", ErrorMessage = "{0} must not contain * or ^")]
+        public virtual string Notes { get; set; }
     }
 }
