@@ -33,7 +33,7 @@ namespace EnrollmentApplication.Models
                 yield return (new ValidationResult("Credits must be between 1 and 4"));
             }
 
-            if(Description.Split(' ').Length > 100)
+            if(Description != null && Description.Split(' ').Length > 100)
             {
                 yield return (new ValidationResult("Your description is too verbose"));
             }
