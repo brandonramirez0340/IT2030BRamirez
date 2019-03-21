@@ -6,6 +6,19 @@
 
 <h2>Index</h2>
 
+<div id="sotm">
+    @Ajax.ActionLink("Click here for the student of the month!",
+    "StudentOfTheMonth",
+    null,
+    new AjaxOptions
+    {
+        UpdateTargetId = "sotm",
+        InsertionMode = InsertionMode.Replace,
+        HttpMethod = "GET"
+    },
+    new { @class = "btn btn-primary"})
+</div>
+
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
@@ -23,23 +36,29 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.LastName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FirstName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Age)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.StudentId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.StudentId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.StudentId })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.StudentId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.StudentId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.StudentId })
+            </td>
+        </tr>
+    }
 
 </table>
+
+@section Scripts {
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    <script src="~/Scripts/Apps/Search.js"></script>
+}
