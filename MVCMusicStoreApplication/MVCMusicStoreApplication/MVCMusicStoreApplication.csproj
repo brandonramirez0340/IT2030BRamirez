@@ -135,6 +135,7 @@
     <Compile Include="Controllers\ArtistsController.cs" />
     <Compile Include="Controllers\GenreController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\StoreController.cs" />
     <Compile Include="Controllers\StoreManagerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -206,6 +207,9 @@
     <Content Include="Views\Artists\Index.cshtml" />
     <Content Include="Views\StoreManager\_DailyDeal.cshtml" />
     <Content Include="Views\StoreManager\_ArtistSearch.cshtml" />
+    <Content Include="Views\Store\Browse.cshtml" />
+    <Content Include="Views\Store\Details.cshtml" />
+    <Content Include="Views\Store\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
