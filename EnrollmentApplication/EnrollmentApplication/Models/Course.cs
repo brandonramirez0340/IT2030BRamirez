@@ -30,12 +30,12 @@ namespace EnrollmentApplication.Models
         {
             if(Credits < 1 || Credits > 4)
             {
-                yield return (new ValidationResult("Credits must be between 1 and 4"));
+                yield return new ValidationResult("Credits must be between 1 and 4", new[] { "Credits" });
             }
 
             if(Description != null && Description.Split(' ').Length > 100)
             {
-                yield return (new ValidationResult("Your description is too verbose"));
+                yield return new ValidationResult("Your description is too verbose", new[] { "Description" });
             }
         }
     }

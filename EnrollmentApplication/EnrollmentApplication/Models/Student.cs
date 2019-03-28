@@ -39,17 +39,17 @@ namespace EnrollmentApplication.Models
 
             if (Address2 == Address1)
             {
-                yield return new ValidationResult("Address2 cannot be the same as Address1");
+                yield return new ValidationResult("Address2 cannot be the same as Address1", new[] { "Address2" });
             }
 
             if (State != null && State.Length != 2)
             {
-                yield return new ValidationResult("Enter a 2 digit State code");
+                yield return new ValidationResult("Enter a 2 digit State code", new[] { "State" });
             }
 
             if (Zipcode != null && Zipcode.Length != 5)
             {
-                yield return new ValidationResult("Enter a 5 digit Zipcode");
+                yield return new ValidationResult("Enter a 5 digit Zipcode", new[] { "Zipcode" });
             }
         }
     }
