@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Event Unlimited</h1>
+    <p class="lead">Find events near you. Never miss out again!</p>
+</div>
+
+<div class="row">
+    <div class="col-md-6 events">
+        <h2>Find an Event</h2>
+        @using (Ajax.BeginForm("EventSearch", "Event", new AjaxOptions
+        {
+            InsertionMode = InsertionMode.Replace,
+            HttpMethod = "GET",
+            OnFailure = "searchFailed",
+            UpdateTargetId = "searchresults"
+        }))
+        {
+            <input type="text" name="eSearchString" placeholder="Event or Event Type" />
+            <input type="text" name="lSearchString" placeholder="City or State" />
+            <input type="submit" value="Search" class="btn btn-primary" />
+        }
+        <br />
+        <div id="searchresults"></div>
+
+    </div>
+    <div class="col-md-6" id="lmd">
+        @Ajax.ActionLink("Click here to see last minute deals!",
+        "LastMinuteDeals",
+        null,
+        new AjaxOptions
+        {
+            UpdateTargetId = "lmd",
+            InsertionMode = InsertionMode.Replace,
+            HttpMethod = "GET"
+        },
+        new { @class = "btn btn-primary" })
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    <script src="~/Scripts/App/Scripts.js"></script>
+}
