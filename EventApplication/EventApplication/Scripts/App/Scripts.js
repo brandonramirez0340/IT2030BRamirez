@@ -30,5 +30,5 @@
 });
 
 function searchFailed() {
-    $("#searchresults").html("Sorry, there was a problem with the search.");
+    $("#searchresults").html("<p>Sorry, there was a problem with the search.</p>");
 }

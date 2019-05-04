@@ -56,3 +56,10 @@ input {
     padding: 30px 10px;
     width: 75%;
 }
+
+#searchresults p {
+    background-color: #eee;
+    text-align: center;
+    padding: 20px 10px;
+    border-radius: 4px;
+}

@@ -21,7 +21,7 @@ namespace EventApplication.Controllers
         private List<Event> GetLastMinuteDeal()
         {
             return db.Events
-                .Where(a => DbFunctions.AddDays(a.StartDate, -2) < DateTime.Now && a.EndDate > DateTime.Now)
+                .Where(a => DbFunctions.AddDays(a.StartDate, -2) < DateTime.Now && a.StartDate > DateTime.Now)
                 .ToList();
         }
 
